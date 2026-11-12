@@ -11,25 +11,25 @@ npm run dev
 
 O workflow `.github/workflows/deploy.yml` builda e publica a cada push na `main` (ou manualmente em Actions → "Deploy no GitHub Pages" → Run workflow). O caminho base é descoberto sozinho: funciona em `usuario.github.io/nome-do-repo/`, num repo `usuario.github.io` e com domínio próprio.
 
-1. Crie um repositório no GitHub (ex.: `frame-landing`).
+1. Crie um repositório no GitHub (ex.: `frame`).
 2. Na pasta do projeto:
 
    ```bash
    git init -b main
    git add .
    git commit -m "Landing page Frame Mulheres & Tech"
-   git remote add origin git@github.com:USUARIO/frame-landing.git
+   git remote add origin https://github.com/ThiagoButhilu/frame.git
    git push -u origin main
    ```
 
 3. No GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-4. Acompanhe em **Actions**. O endereço aparece no job `deploy` (ex.: `https://USUARIO.github.io/frame-landing/`).
+4. Acompanhe em **Actions**. O endereço aparece no job `deploy` (ex.: `https://thiagobuthilu.github.io/frame/`).
 
 Para testar localmente como no Pages:
 
 ```bash
-npm run build -- --base=/frame-landing/
-npm run preview -- --base=/frame-landing/
+npm run build -- --base=/frame/
+npm run preview -- --base=/frame/
 ```
 
 ## Estrutura

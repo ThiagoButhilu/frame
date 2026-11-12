@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# O deploy usa npm ci: o lockfile precisa estar no repositório
+!package-lock.json
