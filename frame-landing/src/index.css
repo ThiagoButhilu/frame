@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* Tokens do Brandbook FRAME · Mulheres & Tech (2026) */
+@theme {
+  --color-ink: #181818;        /* Preto FRAME: fundo de autoridade */
+  --color-violet: #4b1fa8;     /* 1ª cor de destaque */
+  --color-magenta: #c81a4e;    /* 2ª cor de destaque */
+  --color-plum: #601860;       /* Roxo profundo: divisória e evento */
+  --color-lime: #a8d81e;       /* Acento e rótulo sobre escuro */
+  --color-lime-dark: #7a9e12;  /* Limão legível sobre claro */
+  --color-rose: #ecb3cb;       /* Rosa FRAME */
+  --color-blush: #faeff9;      /* Rosa claro: fundo de conteúdo */
+  --color-note: #6e6a68;       /* Nota e fonte */
+
+  --font-display: "League Spartan", system-ui, sans-serif;
+  --font-sans: "Archivo Narrow", "Arial Narrow", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+
+  --radius-frame: 10px;
+
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-blink: blink 1.6s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    overflow-x: clip;
+  }
+  body {
+    @apply bg-ink font-sans text-white antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 3px;
+  }
+}
+
+/* Rótulo de seção: 700 · caixa alta · tracking 0,2em */
+@utility label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Quebra de expectativa: serifada sempre em itálico */
+@utility connective {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Display: 900 · entrelinha 0,88 · tracking −0,03em */
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+}
+
+/* Título de página: 900 · entrelinha 1,02 · tracking −0,02em */
+@utility headline {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+@utility shell {
+  width: 100%;
+  max-width: 82rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 2.5rem;
+  }
+}
